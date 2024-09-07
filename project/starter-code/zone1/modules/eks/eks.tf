@@ -59,8 +59,4 @@ resource "aws_eks_cluster" "cluster" {
      aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly,
      aws_iam_role_policy_attachment.node_harmony_policy_attachment,
    ]
-
-   tags = {
-     Name = "eks-${var.name}-nodes"
-   }
  }
