@@ -2,15 +2,15 @@
   metrics_path: /metrics
   static_configs:
     - targets: 
-      - http://ec2-3-17-81-149.us-east-2.compute.amazonaws.com
-      - http://ec2-3-17-81-149.us-east-2.compute.amazonaws.com
+      - 18.226.177.0
+      - 18.226.177.0
 - job_name: blackbox
   metrics_path: /probe
   params:
     module: [http_2xx]
   static_configs:
     - targets:
-      - http://ec2-3-17-81-149.us-east-2.compute.amazonaws.com
+      - 18.226.177.0
   relabel_configs:
   - source_labels: [__address__]
     target_label: __param_target

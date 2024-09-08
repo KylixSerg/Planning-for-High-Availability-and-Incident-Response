@@ -1370,7 +1370,7 @@ prometheusOperator:
     patch:
       enabled: true
       image:
-        registry: "docker.io"
+        registry: ""
         repository: jettech/kube-webhook-certgen
         tag: v1.5.2
         sha: ""
