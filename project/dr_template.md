@@ -1,21 +1,21 @@
 # Infrastructure
 
 ## AWS Zones
-Identify your zones here
+Zone 1
 
 ## Servers and Clusters
 
 ### Table 1.1 Summary
-| Asset      | Purpose           | Size                                                                   | Qty                                                             | DR                                                                                                           |
-|------------|-------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Asset name | Brief description | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
+| Asset             | Purpose                        | Size                | Qty | DR                                                                  |
+|-------------------|--------------------------------|---------------------|-----|---------------------------------------------------------------------|
+| EC2 instance      | Hosts python web backend       | 1 t3.micro instance | 1   | Yes, another EC2 instance hosting the same web app can be deployed. |
+| RDS mysql cluster | Databse for the python backend | 1 mysql writer      | 1   | Yeah, we can deploy another cluster in a different region f         |
+| EKS cluster       | hosts the monitoring stack     | single node cluster | 1   | we can have multiple nodes, k8s control planes..                    |
 
 ### Descriptions
-More detailed descriptions of each asset identified above.
+
 
 ## DR Plan
 ### Pre-Steps:
-List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice.
 
 ## Steps:
-You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region
