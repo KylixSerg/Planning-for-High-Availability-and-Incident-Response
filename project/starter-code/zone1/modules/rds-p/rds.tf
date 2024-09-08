@@ -42,6 +42,7 @@ resource "aws_rds_cluster" "udacity_cluster" {
   master_password          = "MyUdacityPassword"
   vpc_security_group_ids   = [aws_security_group.db_sg_1.id]
   db_subnet_group_name     = aws_db_subnet_group.udacity_db_subnet_group.name
+  backup_retention_period = 5
   engine = "aurora-mysql"
   engine_mode              = "provisioned"
   engine_version           = "5.7.mysql_aurora.2.12.3"
@@ -59,7 +60,7 @@ output "db_instance_arn" {
 }
 
 resource "aws_rds_cluster_instance" "udacity_instance" {
-  count                = 1
+  count                = 2
   identifier           = "udacity-db-instance-${count.index}"
   cluster_identifier   = "udacity-db-cluster"
   instance_class       = "db.t2.small"
